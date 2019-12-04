@@ -11,6 +11,10 @@ variable "project_name" {
 }
 
 variable "credentials_fle_path" {
-  default = "./kubernetestestdeploy-73df4fcbb05f.json"
+  default = "./credentials.json"
+}
+
+variable "credentials" {
+  type = string
 }
 

@@ -19,7 +19,7 @@ resource "google_compute_address" "static" {
 }
 
 provider "google" {
-  credentials = file(var.credentials_fle_path)
+  credentials = var.credentials
   project = var.project_name
   region = var.region
   zone = var.region_zone
