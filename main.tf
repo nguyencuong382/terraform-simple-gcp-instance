@@ -43,7 +43,7 @@ resource "google_compute_instance" "vm_instance" {
   }
 
   metadata = {
-    ssh-keys = "nguyencuong:${file("~/.ssh/gcc.pub")}"
+    ssh-keys = "nguyencuong:${var.public_key}"
   }
 
   tags = ["http-server", "https-server"]
@@ -51,7 +51,7 @@ resource "google_compute_instance" "vm_instance" {
   connection {
     host = google_compute_address.static.address
     type = "ssh"
-    private_key = file("~/.ssh/gcc")
+    private_key = var.public_key
     user     = "nguyencuong"
     timeout  = "30s"
   }
