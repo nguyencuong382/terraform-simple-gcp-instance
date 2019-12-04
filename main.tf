@@ -15,7 +15,7 @@ resource "random_id" "instance_id" {
 }
 
 resource "google_compute_address" "static" {
-  name = "ipv4-address"
+  name = "ipv4-address-vm-instance-simple-terraform"
 }
 
 provider "google" {
