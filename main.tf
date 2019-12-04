@@ -4,7 +4,7 @@ terraform {
     organization = "Dono"
 
     workspaces {
-      name = "my-app-prod"
+      name = "terraform-simple-gcp-instance"
     }
   }
 }
@@ -51,7 +51,7 @@ resource "google_compute_instance" "vm_instance" {
   connection {
     host = google_compute_address.static.address
     type = "ssh"
-    private_key = var.public_key
+    private_key = var.private_key
     user     = "nguyencuong"
     timeout  = "30s"
   }
