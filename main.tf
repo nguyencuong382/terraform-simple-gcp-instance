@@ -1,3 +1,14 @@
+terraform {
+  backend "remote" {
+    hostname = "app.terraform.io"
+    organization = "Dono"
+
+    workspaces {
+      name = "my-app-prod"
+    }
+  }
+}
+
 // Terraform plugin for creating random ids
 resource "random_id" "instance_id" {
  byte_length = 8
@@ -38,7 +49,7 @@ resource "google_compute_instance" "vm_instance" {
   tags = ["http-server", "https-server"]
 
   connection {
-    host = "${google_compute_address.static.address}"
+    host = google_compute_address.static.address
     type = "ssh"
     private_key = file("~/.ssh/gcc")
     user     = "nguyencuong"
