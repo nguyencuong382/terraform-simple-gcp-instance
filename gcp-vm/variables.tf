@@ -1,3 +1,7 @@
+variable "machine_type" {
+  default = "f1-micro"
+}
+
 variable "region" {
   default = "us-west1"
 }
@@ -7,7 +11,16 @@ variable "region_zone" {
 }
 
 variable "project_name" {
-  default = "kubernetestestdeploy"
+  default = "myfirstproject"
+}
+
+variable "vm_name" {
+  default = ""
+}
+
+
+variable "ssh_user_name" {
+  default = "defaultuser"
 }
 
 variable "credentials_fle_path" {
